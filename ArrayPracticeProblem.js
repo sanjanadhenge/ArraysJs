@@ -1,18 +1,38 @@
-
-let a = [];
-let temp = 0;
-for (let i = 0; i < 10; i++) {
-    a[i] = Math.floor(Math.random() * 999) + 100;
+let n=15;
+arr=[];
+let k=0;
+for (let i = 2; i <=n; i++) {
+  if(n % i == 0)
+  {
+    CheckPrime(i);
+  }
 }
-for (let i = 0; i < 10; i++) {
-   
-    for (let j = i; j < 10; j++) {
-        if (a[i] < a[j]) {
-            temp = a[i];
-            a[i] = a[j];
-            a[j] = temp;
+
+function CheckPrime(a)
+{
+    let flag =0;
+    
+    for(let i = 2; i < a/2; i++ )
+    {
+        if(a%i ==0)
+        {
+            flag=1;
+            break;
         }
+        else
+        {
+            flag=0;
+           
+        }
+       
+    }
+    if(flag == 0)
+    {
+        arr[k]=a;
+        k++;
     }
 }
-console.log("Second largest number is----->"+a[1]);
-console.log("Second smallest number is----->"+a[a.length-2]);
+for(let i=0;i<arr.length;i++)
+{
+    console.log(arr[i]);
+}
