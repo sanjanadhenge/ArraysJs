@@ -1,14 +1,21 @@
-let arr = [1, 0, 2, -1, 5, -7, -2];
-for (let i = 0; i < arr.length; i++) 
+let a=[];
+let rem=0;
+let k=0;
+let temp=0;
+for(let i=11;i<100;i++)
 {
-    for (let j = i; j < arr.length; j++)
-     {
-        for (let k = j; k < arr.length; k++) 
+    temp=i;
+        rem=(temp%10);
+        temp=Math.floor(temp/10);
+        if(temp == rem)
         {
-            if(arr[i]+arr[j]+arr[k] == 0)
-            {
-                console.log(arr[i] +" + "+arr[j] +" + "+arr[k] +" = 0");
-            }
+           
+            a[k]=temp;
+            k++;
         }
-    }
+    
+}
+for(let i=0;i<a.length;i++)
+{
+    console.log(a[i]);
 }
